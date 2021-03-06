@@ -1,0 +1,9 @@
+const { template } = require('./utils');
+
+module.exports = async (ctx) => {
+    const sid = ctx.params.sid;
+    ctx.state.data = {
+        link: `http://www.javlibrary.com/en/vl_genre.php?s=${sid}`,
+    };
+    await template(ctx);
+};
